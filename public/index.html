@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login App</title>
+  <link href="css/main.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script src="scripts/app.js"></script>
+</head>
+<body ng-app="signin">
+  <div class="page-content" ng-controller="mainCtrl">
+    <div class="row">
+      <div class="container">
+        <h2>Index Template</h2>
+        <div class="user" ng-repeat="user in users">
+          <p>{{user.name}}</p>
+        </div>
+        <p><a href="">Hello World</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

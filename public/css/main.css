@@ -1,0 +1,16 @@
+body {
+  background: #efefef;
+  padding-top: 8vh;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+.container {
+  width: 80%;
+  height: auto;
+  max-width: 768px;
+  margin: 0 auto;
+}
