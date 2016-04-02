@@ -15,6 +15,9 @@ var APIRouter = require('./api');
 // Server static files from the root of the directory
 server.use('/', express.static('./public'));
 
+// Server bower components
+server.use('/bower_components', express.static('./bower_components'));
+
 // Mount router to the server
 server.use('/api', APIRouter );
 

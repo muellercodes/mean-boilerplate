@@ -1,13 +1,12 @@
 'use strict';
 
-var app = angular.module('signin', [])
+var app = angular.module('signin', ['ngRoute'])
 .controller('mainCtrl', function( $scope, mainService ) {
 
   mainService.getUsers(function( response ) {
     console.log( response.data.users );
     $scope.users = response.data.users;
   });
-
 })
 
 .service('mainService', function( $http ) {
