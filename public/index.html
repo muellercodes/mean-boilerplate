@@ -11,11 +11,18 @@
   <div class="page-content" ng-controller="mainCtrl">
     <div class="row">
       <div class="container">
-        <h2>Index Template</h2>
-        <div class="user" ng-repeat="user in users">
-          <p>{{user.name}}</p>
+        <div class="navigation">
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#company">Company</a></li>
+            </ul>
+          </nav>
         </div>
-        <p><a href="">Hello World</a></p>
+        <div class="template" ng-view>
+          <!-- Bootstrap our page views -->
+        </div>
       </div>
     </div>
   </div>

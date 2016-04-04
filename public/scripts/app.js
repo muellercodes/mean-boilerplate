@@ -1,12 +1,13 @@
 'use strict';
 
 var app = angular.module('signin', ['ngRoute'])
+
 .controller('mainCtrl', function( $scope, mainService ) {
 
   mainService.getUsers(function( response ) {
-    console.log( response.data.users );
     $scope.users = response.data.users;
   });
+
 })
 
 .service('mainService', function( $http ) {
@@ -16,3 +17,22 @@ var app = angular.module('signin', ['ngRoute'])
   }
 
 });
+
+app.config(['$routeProvider', function( $routeProvider ) {
+  $routeProvider.
+    when('/home', {
+      templateUrl: './page-templates/home.html',
+      controller: 'mainCtrl'
+    }).
+    when('/about', {
+      templateUrl: './page-templates/about.html',
+      controller: 'mainCtrl'
+    }).
+    when('/company', {
+      templateUrl: './page-templates/company.html',
+      controller: 'mainCtrl'
+    }).
+    otherwise({
+      redirectTo: ''
+    });
+}]);
