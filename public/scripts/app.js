@@ -1,22 +1,6 @@
 'use strict';
 
-var app = angular.module('signin', ['ngRoute'])
-
-.controller('mainCtrl', function( $scope, mainService ) {
-
-  mainService.getUsers(function( response ) {
-    $scope.users = response.data.users;
-  });
-
-})
-
-.service('mainService', function( $http ) {
-
-  this.getUsers = function( callback ) {
-    $http.get( 'http://localhost:3000/api/users').then( callback );
-  }
-
-});
+var app = angular.module('signin', ['ngRoute']);
 
 app.config(['$routeProvider', function( $routeProvider ) {
   $routeProvider.
@@ -33,6 +17,6 @@ app.config(['$routeProvider', function( $routeProvider ) {
       controller: 'mainCtrl'
     }).
     otherwise({
-      redirectTo: ''
+      redirectTo: '/home'
     });
 }]);
